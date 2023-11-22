@@ -55,27 +55,43 @@ String password = "123456";
  
 
 **Function: addStudent(String first_name, String last_name, String email, Date enrollmentDate, Connection con)**
+
 **what it does:** Insert a new student record into the student’s table.
+
 **argument in:** Connection con: the connection variable between the application and the database
+
 **argument in:** first name; Fname of the student inputted but the user
+
 **argument in:** last name: Lname of the student inputted but the user
+
 **argument in:** email: email of the student inputted but the user
+
 **argument in: ** enrollmentDate: enrollmentDate of the student inputted but the user
+
 **The DML statement used:** INSERT INTO statement to insert into the database
 
 
 **Function: updateStudentEmail(int student_id, String new_email, Connection con)**
+
 **what it does:** Updates the email address for a student with the specified student_id.
+
 **Connection con:** the connection variable between the application and the database
+
 **argument in:** student_id: used to select which student we want to update their email
+
 **argument in:** email: email of the student inputted by the user
+
 **The DML statement used:** UPDATE SET WHERE statements to update info of a student’s email using their input in the database
 
 
 **Function: deleteStudent(int student_id, Connection con)**
+
 **what it does:**  Deletes the record of the student with the specified student_id.
+
 **Connection con:** the connection variable between the application and the database
+
 **student_id:** used to select which student we want to delete
+
 **The DML statement used:** DELETE statement to DELETE info of a student using their student id to identify who they want to delete
 
 
