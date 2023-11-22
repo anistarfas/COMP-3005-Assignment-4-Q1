@@ -13,11 +13,9 @@ https://youtu.be/zrxYT2RaNTo
 		
 	**Create a New Database:**
 
-	•	Right-click on "Databases" under the PostgreSQL server you just expanded.
-
-	•	Choose "Create" -> "Database”.
-
-	•	Name your database, e.g., “Student_Database” and click "Save"
+		•Right-click on "Databases" under the PostgreSQL server you just expanded.
+		•Choose "Create" -> "Database”.
+		•Name your database, e.g., “Student_Database” and click "Save"
 
     **Running the SQL Script:**
     
