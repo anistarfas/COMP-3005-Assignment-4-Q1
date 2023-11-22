@@ -17,6 +17,7 @@ https://youtu.be/zrxYT2RaNTo
 	•	Choose "Create" -> "Database”.
 
 	•	Name your database, e.g., “Student_Database” and click "Save"
+
     **Running the SQL Script**
     
 	**files for the scripts can be found in the GitHub repository when you download the whole repository you can see the files in the folder**
