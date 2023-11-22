@@ -1,7 +1,7 @@
 # COMP-3005-Assignment-4-Q1
 
 •	Youtube link video demonstration:
-**[https://youtu.be/zrxYT2RaNTo](url)**
+**[https://youtu.be/zrxYT2RaNTo]([url](https://youtu.be/zrxYT2RaNTo))**
 
 
 **	•	Setup instructions for the database:**
