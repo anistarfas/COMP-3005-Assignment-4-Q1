@@ -4,7 +4,7 @@
 https://youtu.be/zrxYT2RaNTo
 
 
-**	•	Setup instructions for the database:**
+**Setup instructions for the database:**
 1.  Start your pgAdmin4 Application or the equivalent of that
 2.  Connect to the PostgreSQL Server
 	•	In pgAdmin, under the "Browser" panel on the left, expand the "Servers" section.
@@ -17,9 +17,8 @@ https://youtu.be/zrxYT2RaNTo
 	•	Choose "Create" -> "Database”.
 
 	•	Name your database, e.g., “Student_Database” and click "Save"
-		
-		 **Running the SQL Script
-		files for the scripts can be found in the GitHub repository when you download the whole repository you can see the files in the folder** 
+    **Running the SQL Script**
+		**files for the scripts can be found in the GitHub repository when you download the whole repository you can see the files in the folder** 
 		•In pgAdmin, select the newly created Student_Database database by clicking on it.
 		•Open the Query Tool by right-clicking on Student_Database and selecting Query Tool.
 		•Click on the Open File icon (looks like a folder) in the toolbar.
@@ -28,7 +27,7 @@ https://youtu.be/zrxYT2RaNTo
 		•Click on the Run button (a green triangle) to execute the SQL commands.
 		•repeat the steps for the DML_Student_Enrollment_Database.sql file which will insert the default values 
 YOU HAVE NOW CREATED THE DATABASE YOU ARE READY FOR THE APPLICATION SETUP!!
-	**•	Steps to compile and run your application **
+	**Steps to compile and run your application**
 1. Download the repository from the GitHub(which will download as a zip)
 2. once you have the file opened on an IDE (IntelliJ IDEA)
 2. You must make sure no errors are shown on your pom.xml and that all dependencies have been imported with no issue 
