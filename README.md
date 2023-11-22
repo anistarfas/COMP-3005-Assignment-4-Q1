@@ -12,6 +12,7 @@ https://youtu.be/zrxYT2RaNTo
 	•	It will prompt you for the password. Enter the password you set during the installation.
 		
 	**Create a New Database**
+
 	•	Right-click on "Databases" under the PostgreSQL server you just expanded.
 
 	•	Choose "Create" -> "Database”.
