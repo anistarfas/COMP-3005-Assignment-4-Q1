@@ -11,7 +11,7 @@ https://youtu.be/zrxYT2RaNTo
 	•	You'll see "PostgreSQL #" (where # is the version number). Click on it.
 	•	It will prompt you for the password. Enter the password you set during the installation.
 		
-	**Create a New Database**
+	**Create a New Database:**
 
 	•	Right-click on "Databases" under the PostgreSQL server you just expanded.
 
@@ -19,7 +19,7 @@ https://youtu.be/zrxYT2RaNTo
 
 	•	Name your database, e.g., “Student_Database” and click "Save"
 
-    **Running the SQL Script**
+    **Running the SQL Script:**
     
 	**files for the scripts can be found in the GitHub repository when you download the whole repository you can see the files in the folder**
 
@@ -33,7 +33,7 @@ https://youtu.be/zrxYT2RaNTo
  
 YOU HAVE NOW CREATED THE DATABASE YOU ARE READY FOR THE APPLICATION SETUP!!
 
-**Steps to compile and run your application**
+**Steps to compile and run your application:**
 1. Download the repository from the GitHub(which will download as a zip)
 2. once you have the file opened on an IDE (IntelliJ IDEA)
 2. You must make sure no errors are shown on your pom.xml and that all dependencies have been imported with no issue 
@@ -53,7 +53,7 @@ String password = "123456";
 6. once you have updated the JDBC and database credentials, you should be able to run the application with the IntelliJ IDEA you can press the green triangle play button.
 	•	A brief explanation of each function in the application 
 
-**Function explanation**
+**Function explanation:**
 
 **Function: getAllStudents(Connection con)**
 **what it does:** allows user to retrieve all students in the database
