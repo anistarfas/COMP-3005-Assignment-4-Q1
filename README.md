@@ -54,6 +54,10 @@ String password = "123456";
 **The DML statement used:** SELECT statement to retrieve from the database
  
 
+
+
+
+
 **Function: addStudent(String first_name, String last_name, String email, Date enrollmentDate, Connection con)**
 
 **what it does:** Insert a new student record into the student’s table.
