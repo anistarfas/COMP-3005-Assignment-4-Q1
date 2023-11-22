@@ -52,6 +52,8 @@ String password = "123456";
 6. once you have updated the JDBC and database credentials, you should be able to run the application with the IntelliJ IDEA you can press the green triangle play button.
 	•	A brief explanation of each function in the application 
 
+**Function explanation**
+
 **Function: getAllStudents(Connection con)**
 **what it does:** allows user to retrieve all students in the database
 **argument in:** Connection con: the connection variable between the application and the database
