@@ -37,11 +37,12 @@ YOU HAVE NOW CREATED THE DATABASE YOU ARE READY FOR THE APPLICATION SETUP!!
 **Steps to compile and run your application:**
 1. Download the repository from the GitHub(which will download as a zip)
 2. once you have the file opened on an IDE (IntelliJ IDEA)
-2. You must make sure no errors are shown on your pom.xml and that all dependencies have been imported with no issue 
-3. we must make sure that the JBC driver is able to get authenticated so that the driver can access the database 
-4. must update the following lines of code usually localhost is fine unless changed by you, and the port is usually the same unless changed and the same for the user, the password must be whatever password was entered when downloaded.
-5. when opening the folder on IntelliJ IDE you will get a notification on the buttom right from maven and it will ask you to press on load button to load the scripts 
-6. the file that has the main Application is **studentApp.java**  
+3. when opening the folder on IntelliJ IDE you will get a notification on the buttom right from maven and it will ask you to press on load button to load the scripts
+4. the file that has the main Application is **studentApp.java**
+5. You must make sure no errors are shown on your pom.xml and that all dependencies have been imported with no issue
+6. we must make sure that the JBC driver is able to get authenticated so that the driver can access the database
+7. must update the following lines of code usually localhost is fine unless changed by you, and the port is usually the same unless changed and the same for the user, the password must be whatever password was entered when downloaded.
+ 
 Additionally: to find the port and the hostname/address you can navigate to your pgAdmin4 application enter your server go to properties and then scroll down to connection you should then be able to see the information:
 
 update info below in the application source code guide above in step 4
@@ -52,7 +53,7 @@ String user = "postgres";
 
 String password = "123456";
 
-7. once you have updated the JDBC and database credentials, you should be able to run the application with the IntelliJ IDEA you can press the green triangle play button.
+8. once you have updated the JDBC and database credentials, you should be able to run the application with the IntelliJ IDEA you can press the green triangle play button.
 	•	A brief explanation of each function in the application 
 
 **Function explanation:**
