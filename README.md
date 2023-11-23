@@ -37,7 +37,7 @@ YOU HAVE NOW CREATED THE DATABASE YOU ARE READY FOR THE APPLICATION SETUP!!
 2. You must make sure no errors are shown on your pom.xml and that all dependencies have been imported with no issue 
 3. we must make sure that the JBC driver is able to get authenticated so that the driver can access the database 
 4. must update the following lines of code usually localhost is fine unless changed by you, and the port is usually the same unless changed and the same for the user, the password must be whatever password was entered when downloaded.
-   
+5. the file that has the main Application is **studentApp.java**  
 Additionally: to find the port and the hostname/address you can navigate to your pgAdmin4 application enter your server go to properties and then scroll down to connection you should then be able to see the information:
 
 update info below in the application source code guide above in step 4
