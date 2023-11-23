@@ -2,6 +2,9 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class StudentsApp {
+    //allow us to establish connection to be used throughout functions when passing in our queries
+    private static Connection conn;
+    //scanner to allow us to receive user input through our application which is then passed to our database
     private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
 
@@ -14,7 +17,8 @@ public class StudentsApp {
             // Load PostgreSQL JDBC Driver
             Class.forName( "org.postgresql.Driver" );
             // Connect to the database verify with the following credentials
-            Connection conn = DriverManager.getConnection(url, user, password);
+
+            conn = DriverManager.getConnection(url, user, password);
 
             // we have a successful connection if the conn!=null
             if (conn != null) {
@@ -38,7 +42,7 @@ public class StudentsApp {
                         //user selects action 1 to get all students so this case gets triggered
                         case 1 ->
                             //present all students
-                                getAllStudents(conn);
+                                getAllStudents();
                         //user selects to add a students so this case so it gets triggered. We are adding a student and asking for Fname,Lname,email,and date of enrollment form the user
                         case 2 -> {
 
@@ -80,7 +84,7 @@ public class StudentsApp {
                                 }
                             }
                             //call addStudent function as required
-                            addStudent(first_name, last_name, email, enrollmentDate, conn);
+                            addStudent(first_name, last_name, email, enrollmentDate);
                         }
                         //this option update a student based of their student id and ask for a new email to be updated
                         case 3 -> {
@@ -91,7 +95,7 @@ public class StudentsApp {
                             // Read user input for the new email
                             String new_email = scanner.next();
                             //call the update required function
-                            updateStudentEmail(student_id, new_email, conn);
+                            updateStudentEmail(student_id, new_email);
                         }
                         //case will allow the user to delete a student bases on user id
                         case 4 -> {
@@ -100,7 +104,7 @@ public class StudentsApp {
                             //store the id of the student to be passed into the function
                             int deleteStudentId = scanner.nextInt();
                             //calling the required function
-                            deleteStudent(deleteStudentId, conn);
+                            deleteStudent(deleteStudentId);
                         }
                         //this case will allow the user to exit the application
                         case 5 -> {
@@ -137,8 +141,9 @@ public class StudentsApp {
     argument in: Connection con: the connection variable between the application and the database
     uses SELECT statement to retrieve from the database
      */
-    public static void getAllStudents(Connection con) throws SQLException {
-        Statement stmt = con.createStatement(); // Execute SQL query
+    public static void getAllStudents() throws SQLException {
+
+        Statement stmt = conn.createStatement(); // Execute SQL query
         String SQL = "SELECT student_id,first_name, last_name,email,enrollment_date FROM students";
         ResultSet rs = stmt.executeQuery(SQL); // string the results
         //getting to show the user through the application while as long we have next element to retrieve from the set
@@ -158,20 +163,19 @@ public class StudentsApp {
 
 
     /*
-    Function: addStudent(String first_name, String last_name, String email, Date enrollmentDate, Connection con)
+    Function: addStudent(String first_name, String last_name, String email, Date enrollmentDate)
     what it does: Inserts a new student record into the students table.
-    argument in: Connection con: the connection variable between the application and the database
     argument in: first name; Fname of the student inputted but the user
     argument in: last name: Lname of the student inputted but the user
     argument in: email: email of the student inputted but the user
     argument in: enrollmentDate: enrollmentDate of the student inputted but the user
     uses 'INSERT INTO' statement is used to insert into the database
      */
-    public static void addStudent(String first_name, String last_name, String email, Date enrollmentDate, Connection con) throws SQLException {
+    public static void addStudent(String first_name, String last_name, String email, Date enrollmentDate) throws SQLException {
         //the sql statement to insert
         String insertSQL = "INSERT INTO students (first_name, last_name, email, enrollment_date) VALUES (?, ?, ?, ?)";
         //the connection variable
-        Connection conn = con;
+
         //executing a parameterized SQL query within thr try statement
         try (PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
             //setting all the required parameters to be executed
@@ -197,7 +201,7 @@ public class StudentsApp {
             String newEmail = scanner.next();
 
             // call to add the email with the new one
-            addStudent( first_name,  last_name,  newEmail,  enrollmentDate,  con);
+            addStudent( first_name,  last_name,  newEmail,  enrollmentDate);
         } else {
             e.printStackTrace();
         }
@@ -206,18 +210,17 @@ public class StudentsApp {
     }
 
     /*
-    Function: updateStudentEmail(int student_id, String new_email, Connection con)
+    Function: updateStudentEmail(int student_id, String new_email)
     what it does: Updates the email address for a student with the specified student_id.
-    argument in: Connection con: the connection variable between the application and the database
     argument in: student_id: used to select which student we want to update their email
     argument in: email: email of the student inputted by the user
     uses UPDATE statement to update info of a student email
      */
-    public static void updateStudentEmail(int student_id, String new_email, Connection con) throws SQLException {
+    public static void updateStudentEmail(int student_id, String new_email) throws SQLException {
         //update SQL statement which will be passed to database via the connection we established
         String updateSQL = "UPDATE students SET email = ? WHERE student_id = ?";
         //the connection variable
-        Connection conn = con;
+
         //executing a parameterized SQL query within the try statement
         try (PreparedStatement pstmt = conn.prepareStatement(updateSQL)) {
             pstmt.setString(1, new_email);
@@ -240,7 +243,7 @@ public class StudentsApp {
                 // Read user input for the new email
                 String new_emails = scanner.next();
                 //call the update required function
-                updateStudentEmail(newStudentId, new_emails, conn);
+                updateStudentEmail(newStudentId, new_emails);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -255,7 +258,7 @@ public class StudentsApp {
                 String newEmail = scanner.next();
 
                 // call to update the email with the new one
-                updateStudentEmail(student_id, newEmail, con);
+                updateStudentEmail(student_id, newEmail);
             } else {
                 e.printStackTrace();
             }
@@ -265,17 +268,16 @@ public class StudentsApp {
     }
 
     /*
-   Function: deleteStudent(int student_id, Connection con)
+   Function: deleteStudent(int student_id)
    what it does:  Deletes the record of the student with the specified student_id.
-   Connection con: the connection variable between the application and the database
    student_id: used to select which student we want to delete
    uses the 'DELETE' statement to 'DELETE' info of a student  using their student id to identify who they want to delete
     */
-    public static void deleteStudent(int student_id, Connection con) throws SQLException {
+    public static void deleteStudent(int student_id) throws SQLException {
         //DELETE SQL statement which will be passed to database via the connection we established
         String deleteSQL = "DELETE FROM students WHERE student_id = ?";
 
-        Connection conn = con;
+
         try (PreparedStatement pstmt = conn.prepareStatement(deleteSQL)) {
             pstmt.setInt(1, student_id);
             //this is very important process we store int of what is updated
@@ -292,7 +294,7 @@ public class StudentsApp {
                 int newStudentId = scanner.nextInt();
 
                 //  call to deleteStudent with the new student ID
-                deleteStudent(newStudentId, conn);
+                deleteStudent(newStudentId);
             }
         } catch (SQLException e) {
             e.printStackTrace();
