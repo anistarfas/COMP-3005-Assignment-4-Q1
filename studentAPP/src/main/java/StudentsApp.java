@@ -173,7 +173,7 @@ public class StudentsApp {
     public static void addStudent(String first_name, String last_name, String email, Date enrollmentDate) throws SQLException {
         //the sql statement to insert
         String insertSQL = "INSERT INTO students (first_name, last_name, email, enrollment_date) VALUES (?, ?, ?, ?)";
-        //the connection variable
+        
 
         //executing a parameterized SQL query within thr try statement
         try (PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
@@ -218,7 +218,7 @@ public class StudentsApp {
     public static void updateStudentEmail(int student_id, String new_email) throws SQLException {
         //update SQL statement which will be passed to database via the connection we established
         String updateSQL = "UPDATE students SET email = ? WHERE student_id = ?";
-        //the connection variable
+        
 
         //executing a parameterized SQL query within the try statement
         try (PreparedStatement pstmt = conn.prepareStatement(updateSQL)) {
