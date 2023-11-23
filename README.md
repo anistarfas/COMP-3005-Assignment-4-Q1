@@ -6,9 +6,12 @@ https://youtu.be/zrxYT2RaNTo
 
 **Setup instructions for the database:**
 1.  Start your pgAdmin4 Application or the equivalent of that
-2.  Connect to the PostgreSQL Server
+   
+3.  Connect to the PostgreSQL Server
 	•	In pgAdmin, under the "Browser" panel on the left, expand the "Servers" section.
+
 	•	You'll see "PostgreSQL #" (where # is the version number). Click on it.
+
 	•	It will prompt you for the password. Enter the password you set during the installation.
 		
 	**Create a New Database:**
