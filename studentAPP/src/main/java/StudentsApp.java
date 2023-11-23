@@ -136,7 +136,7 @@ public class StudentsApp {
     }
 
     /*
-    Function: getAllStudents(Connection con)
+    Function: getAllStudents()
     what it does: allow user to retrieve all students in the database
     argument in: Connection con: the connection variable between the application and the database
     uses SELECT statement to retrieve from the database
