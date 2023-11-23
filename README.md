@@ -54,7 +54,7 @@ String user = "postgres";
 String password = "123456";
 
 8. once you have updated the JDBC and database credentials, you should be able to run the application with the IntelliJ IDEA you can press the green triangle play button.
-	•	A brief explanation of each function in the application 
+	
 
 **Function explanation:**
 
