@@ -38,7 +38,7 @@ YOU HAVE NOW CREATED THE DATABASE YOU ARE READY FOR THE APPLICATION SETUP!!
 1. Download the repository from the GitHub(which will download as a zip)
 2. once you have the file opened on an IDE (IntelliJ IDEA)
 3. when opening the folder on IntelliJ IDE you will get a notification on the buttom right from maven and it will ask you to press on load button to load the scripts
-4. the file that has the main Application is **studentApp.java**
+4. the file that has the main Application is **studentApp.java** found under **studentAPP/src/main/java**
 5. You must make sure no errors are shown on your pom.xml and that all dependencies have been imported with no issue
 6. we must make sure that the JBC driver is able to get authenticated so that the driver can access the database
 7. must update the following lines of code usually localhost is fine unless changed by you, and the port is usually the same unless changed and the same for the user, the password must be whatever password was entered when downloaded.
